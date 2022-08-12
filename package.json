@@ -2,7 +2,7 @@
   "name": "@jag-k/rollup-plugin-scriptable",
   "description": "Create a Scriptable bundle from your project",
   "license": "SEE LICENSE IN LICENSE",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": {
     "email": "jag.konon@gmail.com",
     "name": "Jag_k",
