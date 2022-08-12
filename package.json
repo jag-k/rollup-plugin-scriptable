@@ -1,0 +1,48 @@
+{
+  "name": "rollup-plugin-scriptable",
+  "description": "Create a Scriptable bundle from your project",
+  "license": "MIT",
+  "version": "1.0.0",
+  "author": {
+    "email": "jag.konon@gmail.com",
+    "name": "Jag_k",
+    "url": "https://github.com/jag-k"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jag-k/rollup-plugin-scriptable.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jag-k/rollup-plugin-scriptable/issues"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "prebuild": "rm -rf dist"
+  },
+  "files": [
+    "dist",
+    "types",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "rollup",
+    "plugin",
+    "scriptable",
+    "scriptable-ios"
+  ],
+  "peerDependencies": {
+    "rollup": "^1.20.0 || ^2.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^8.3.4",
+    "rollup": "^2.67.3",
+    "tslib": "^2.4.0"
+  },
+  "types": "./dist/index.d.ts"
+}
