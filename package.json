@@ -1,12 +1,15 @@
 {
-  "name": "rollup-plugin-scriptable",
+  "name": "@jag-k/rollup-plugin-scriptable",
   "description": "Create a Scriptable bundle from your project",
   "license": "SEE LICENSE IN LICENSE",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": {
     "email": "jag.konon@gmail.com",
     "name": "Jag_k",
     "url": "https://github.com/jag-k"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "repository": {
     "type": "git",
