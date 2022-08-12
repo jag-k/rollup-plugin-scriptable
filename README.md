@@ -1,15 +1,16 @@
-[npm]: https://img.shields.io/npm/v/jag-k/rollup-plugin-scriptable
+[npm]: https://img.shields.io/npm/v/@jag-k/rollup-plugin-scriptable
 [npm-url]: https://www.npmjs.com/package/@jag-k/rollup-plugin-scriptable
 [main-version]: https://img.shields.io/github/package-json/v/jag-k/rollup-plugin-scriptable?label=main%20version
+[size]: https://packagephobia.com/badge?p=@jag-k/rollup-plugin-scriptable
+[size-url]: https://packagephobia.com/result?p=@jag-k/rollup-plugin-scriptable
 [license]: https://img.shields.io/github/license/jag-k/rollup-plugin-scriptable
-[gh-packages]: https://img.shields.io/npm/v/jag-k/rollup-plugin-scriptable/latest?label=gh%20packages&registry_uri=https%3A%2F%2Fnpm.pkg.github.com
 
 # Rollup Plugin Scriptable
 
-[![npm][npm]][npm-url]
-[![GitHub Packages][gh-packages]][npm-url]
+[![NPM][npm]][npm-url]
 [![Main version][main-version]](package.json)
 [![License][license]](LICENSE)
+[![Install size][size]][size-url]
 
 Create a [Scriptable](https://scriptable.app) bundle from your project
 
