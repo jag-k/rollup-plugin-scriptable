@@ -82,7 +82,7 @@ import copy from 'rollup-plugin-copy';
 import * as config from "./config.json";
 
 export default {
-  input: 'src/main.ts',
+  input: 'src/main.js',
   output: [
     {
       file: `dist/${config.name}.js`,
@@ -92,6 +92,7 @@ export default {
   ],
   plugins: process.env.COPY_TO_ICLOUD === 'true' ? [
     copy({
+      hook: 'writeBundle',
       targets: [
         {
           src: `dist/*.js`,
