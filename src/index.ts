@@ -13,11 +13,12 @@ interface Config {
 }
 
 interface BannerData {
-  'always-run-in-app'?: boolean | string | null,
-  'share-sheet-inputs'?: string | null,
+  'always-run-in-app'?: boolean | string,
+  'share-sheet-inputs'?: string,
   'icon-color'?: string,
   'icon-glyph'?: string,
 
+  // for backwards compatibility
   [key: string]: any,
 }
 
@@ -27,7 +28,7 @@ export default function scriptableBundle(config: Config): Plugin {
     renderChunk(code, chunk) {
       let bannerData: BannerData = {
         "always-run-in-app": config.always_run_in_app || false,
-        "share-sheet-inputs": config.share_sheet_inputs ? config.share_sheet_inputs.join(', ') : null,
+        "share-sheet-inputs": config.share_sheet_inputs ? config.share_sheet_inputs.join(', ') : '',
       }
 
       if (config.icon) {
@@ -42,7 +43,17 @@ export default function scriptableBundle(config: Config): Plugin {
       const banner = (
         "// Variables used by Scriptable.\n" +
         "// These must be at the very top of the file. Do not edit.\n" +
-        `// ${Object.keys(bannerData).map((key) => `${key}=${bannerData[key]}`).join('; ')}\n`
+        `// ${
+          Object
+            .keys(bannerData)
+            .filter(
+              (key) => !!bannerData[key]
+            )
+            .map(
+              (key) => `${key}: ${bannerData[key]};`
+            )
+            .join(' ')
+        }\n`
       );
 
       const result = {
