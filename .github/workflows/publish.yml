@@ -14,28 +14,27 @@ jobs:
       - name: Install deps
         run: npm ci
       - name: Build
+        id: build
         run: npm run build
 
-  publish-to-npm:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
       - uses: actions/setup-node@v3
+        id: setup-node-npm
+        if: steps.build.conclusion == "success"
         with:
           registry-url: 'https://registry.npmjs.org'
       - name: Publish to NPM
         run: npm publish
+        if: steps.setup-node-npm.conclusion == "success"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-  publish-to-gh-pkg:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
       - uses: actions/setup-node@v3
+        id: setup-node-gh-pkg
+        if: steps.build.conclusion == "success"
         with:
           registry-url: 'https://npm.pkg.github.com'
       - name: Publish to GitHub Packages
+        if: steps.setup-node-gh-pkg.conclusion == "success"
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GH_PKG_TOKEN }}
