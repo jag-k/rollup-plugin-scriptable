@@ -1,13 +1,8 @@
 [npm]: https://img.shields.io/npm/v/@jag-k/rollup-plugin-scriptable
-
 [npm-url]: https://www.npmjs.com/package/@jag-k/rollup-plugin-scriptable
-
 [main-version]: https://img.shields.io/github/package-json/v/jag-k/rollup-plugin-scriptable?label=main%20version
-
 [size]: https://packagephobia.com/badge?p=@jag-k/rollup-plugin-scriptable
-
 [size-url]: https://packagephobia.com/result?p=@jag-k/rollup-plugin-scriptable
-
 [license]: https://img.shields.io/github/license/jag-k/rollup-plugin-scriptable
 
 # Rollup Plugin Scriptable
@@ -77,9 +72,10 @@ development and debugging Scriptable scripts.
 
 ```js
 // rollup.config.js
-import scriptableBundle from "@jag-k/rollup-plugin-scriptable";
+import { homedir } from 'os';
+import scriptableBundle from '@jag-k/rollup-plugin-scriptable';
 import copy from 'rollup-plugin-copy';
-import * as config from "./config.json";
+import * as config from './config.json';
 
 export default {
   input: 'src/main.js',
@@ -96,7 +92,7 @@ export default {
       targets: [
         {
           src: `dist/*.js`,
-          dest: '~/Library/Mobile Documents/iCloud~dk~simonbs~Scriptable/Documents/'
+          dest: `${homedir()}/Library/Mobile Documents/iCloud~dk~simonbs~Scriptable/Documents/`
         },
       ]
     })
